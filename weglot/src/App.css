@@ -7,7 +7,7 @@
   --green: #41d673
 }
 body {
-  background: rgba(0, 0, 0, 1);
+  background: #161616;  
 }
 /* first page */
 .green {
@@ -23,4 +23,8 @@ body {
 }
 .intro {
   min-height: 60vh;
+}
+/* second page */
+.about_germans_intro {
+  background: #DEB887;
 }
