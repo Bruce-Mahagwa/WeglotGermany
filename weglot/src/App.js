@@ -4,13 +4,13 @@ import AboutGermans from "./Components/AboutGermans/AboutGermans"
 function App() {
   return (
     <main>
-      <div id = "content" className = " w-full flex flex-col items-center">
+      <div id = "content" className = "flex flex-col items-center mx-auto">
           <Landing />
           <AboutGermans />
       </div>
-      <div id = "links">
+      {/* <div id = "links">
 
-      </div>
+      </div> */}
     </main>
   );
 }
