@@ -22,10 +22,11 @@ const AboutGermans = () => {
         const diff = current - scrollY.getPrevious()
         setScrollDirection(diff > 0 ? "down" : "up")
     })
+
     return (
         <>
             <div className="w-full px-4 md:px-8 pt-12 mb-12">
-                <div className="about_germans_intro rounded-xl p-4 md:p-8 lg:p-12 w-max text-white text-xl md:text-4xl lg:text-6xl">
+                <div className="about_germans_intro rounded-xl p-4 md:p-8 lg:p-12 w-full md:max-w-[70%] text-white text-lg md:text-2xl lg:text-4xl">
                     <motion.p
                         initial={{ opacity: 0, top: "15px" }}
                         whileInView={{ opacity: 1, top: "0px" }}
@@ -40,7 +41,7 @@ const AboutGermans = () => {
                 ref={ref}
             >
                 <div className="sticky min-h-screen top-0 flex flex-col justify-center">
-                    <div className="w-full flex flex-col items-center md:flex-row">
+                    <div className="w-full flex flex-col items-center md:flex-row md:pl-8">
                         {countScrollPosition >= 1 && scrollYProgress.current > 0 && <motion.div className="w-32 h-32 flex items-center items-center lg:w-48 lg:h-48 border border-gray-800 text-center rounded-full p-4"
                             initial={scrollDirection === "down" ? {opacity: 0} : countScrollPosition === 1 ? {opacity:1}: {}}
                             animate={scrollDirection === "down" ? {opacity: 1} : countScrollPosition === 1 ? {opacity: 0}: {}}
@@ -91,7 +92,7 @@ const AboutGermans = () => {
                     </div>
 
                     <div className="border border-gray-800 p-8 rounded-lg mt-4 text-white">
-                        {countScrollPosition === 1 && <motion.p className="font-bold text-xl sm:text-2xl lg:text-4xl">
+                        {countScrollPosition === 1 && <motion.p className="font-bold text-lg sm:text-2xl lg:text-6xl">
                             {"Barbara".split('').map((letter, index) => (
                                 <motion.span
                                     key={index}
@@ -103,7 +104,7 @@ const AboutGermans = () => {
                                 </motion.span>
                             ))}
                         </motion.p>}
-                        {countScrollPosition === 2 && <motion.p className="font-bold text-xl sm:text-2xl lg:text-4xl relative">
+                        {countScrollPosition === 2 && <motion.p className="font-bold text-lg sm:text-2xl lg:text-6xl relative">
                             Rhabarberkuchen
                             <motion.span className="absolute text-purple-400"
                                 initial={{ left: "5px", opacity: 0.5 }}
@@ -112,7 +113,7 @@ const AboutGermans = () => {
                             >barbara</motion.span>
                         </motion.p>}
 
-                        {countScrollPosition >= 3 && <motion.p className="font-bold text-xl sm:text-2xl lg:text-4xl relative">
+                        {countScrollPosition >= 3 && <motion.p className="font-bold text-lg sm:text-2xl lg:text-6xl relative">
                             <motion.span className="tex-white"
                                 animate={{ color: "#c084fc" }}
                                 transition={{ delay: 0.3, duration: 0.2 }}

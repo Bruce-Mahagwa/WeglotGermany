@@ -3,8 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+#content {
+  max-width: 1340px;
+}
 :root {
-  --green: #41d673
+  --green: #41d673;
+  --orange: #ffab48;
 }
 body {
   background: #161616;  
@@ -12,6 +16,9 @@ body {
 /* first page */
 .green {
   color: var(--green);
+}
+.orange {
+  color: var(--orange);
 }
 .green_bg {
   background: var(--green);
