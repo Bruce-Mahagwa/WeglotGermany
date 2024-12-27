@@ -2,6 +2,7 @@ import './App.css';
 import Landing from './Components/Landing/Landing';
 import AboutGermans from "./Components/AboutGermans/AboutGermans"
 import GermanFood from './Components/AboutGermans/GermanFood';
+import BeerTypes from './Components/AboutGermans/BeerTypes';
 function App() {
   return (
     <main>
@@ -9,6 +10,7 @@ function App() {
           <Landing />
           <AboutGermans />
           <GermanFood />
+          <BeerTypes />
       </div>
       {/* <div id = "links">
 

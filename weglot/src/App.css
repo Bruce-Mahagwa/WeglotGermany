@@ -35,3 +35,9 @@ body {
 .about_germans_intro {
   background: #DEB887;
 }
+/* beers page */
+.beer_svgs {
+  background-image: url("./assets/gray_surface.svg");
+  background-position: center top 75%;
+  background-repeat: no-repeat;
+}
