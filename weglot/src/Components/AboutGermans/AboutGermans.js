@@ -49,44 +49,44 @@ const AboutGermans = () => {
                         >
                             <img src={woman} className="rounded-full w-1/2 h-1/2 md:w-3/4 md:h-3/4 mx-auto" alt="pic of a woman" />
                         </motion.div>}
-                        {countScrollPosition >= 2 && <motion.div className="w-32 h-32 flex flex-col gap-4 items-center relative top-[-32px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-28px] border border-gray-800 text-center rounded-full p-4"
+                        {countScrollPosition >= 2 && <motion.div className="w-32 h-32 flex flex-col justify-center items-center relative top-[-32px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-28px] border border-gray-800 text-center rounded-full p-4"
                             initial={scrollDirection === "down" ? {opacity: 0} : countScrollPosition === 2 ? {opacity:1}: {}}
                             animate={scrollDirection === "down" ? {opacity: 1} : countScrollPosition === 2 ? {opacity: 0}: {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <FaPlus className="inline-block md:absolute text-gray-500" />
+                            <FaPlus className="text-gray-500 inline-block absolute -mt-[75%] md:mt-0 md:left-[5%] lg:left-[2.5%]" />
                             <img src={wallet} className="rounded-full w-1/2 h-1/2 md:w-3/4 md:h-3/4 mx-auto md:justify-self-center" alt="pic of a wallet" />
                         </motion.div>}
-                        {countScrollPosition >= 3 && <motion.div className="w-32 h-32 flex flex-col gap-4 items-center relative top-[-64px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-56px] border border-gray-800 text-center rounded-full p-4"
+                        {countScrollPosition >= 3 && <motion.div className="w-32 h-32 flex flex-col justify-center items-center relative top-[-64px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-56px] border border-gray-800 text-center rounded-full p-4"
                             initial={scrollDirection === "down" ? {opacity: 0} : countScrollPosition === 3 ? {opacity:1}: {}}
                             animate={scrollDirection === "down" ? {opacity: 1} : countScrollPosition === 3 ? {opacity: 0}: {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <FaPlus className="inline-block md:absolute text-gray-500" />
+                            <FaPlus className="text-gray-500 inline-block absolute -mt-[75%] md:mt-0 md:left-[5%] lg:left-[2.5%]" />
                             <img src={shield} className="rounded-full w-1/2 h-1/2 md:w-3/4 md:h-3/4 mx-auto md:justify-self-center" alt="pic of a shield" />
                         </motion.div>}
-                        {countScrollPosition >= 4 && <motion.div className="w-32 h-32 flex flex-col gap-4 items-center relative top-[-96px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-84px] border border-gray-800 text-center rounded-full p-4"
+                        {countScrollPosition >= 4 && <motion.div className="w-32 h-32 flex flex-col justify-center items-center relative top-[-96px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-84px] border border-gray-800 text-center rounded-full p-4"
                             initial={scrollDirection === "down" ? {opacity: 0} : countScrollPosition === 4 ? {opacity:1}: {}}
                             animate={scrollDirection === "down" ? {opacity: 1} : countScrollPosition === 4 ? {opacity: 0}: {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <FaPlus className="inline-block md:absolute text-gray-500" />
+                            <FaPlus className="text-gray-500 inline-block absolute -mt-[75%] md:mt-0 md:left-[5%] lg:left-[2.5%]" />
                             <img src={viking} className="rounded-full w-1/2 h-1/2 md:w-3/4 md:h-3/4 mx-auto md:justify-self-center" alt="pic of a viking" />
                         </motion.div>}
-                        {countScrollPosition >= 5 && <motion.div className="w-32 h-32 flex flex-col gap-4 items-center relative top-[-128px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-112px] border border-gray-800 text-center rounded-full p-4"
+                        {countScrollPosition >= 5 && <motion.div className="w-32 h-32 flex flex-col justify-center items-center relative top-[-128px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-112px] border border-gray-800 text-center rounded-full p-4"
                             initial={scrollDirection === "down" ? {opacity: 0} : countScrollPosition === 5 ? {opacity:1}: {}}
                             animate={scrollDirection === "down" ? {opacity: 1} : countScrollPosition === 5 ? {opacity: 0}: {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <FaPlus className="inline-block md:absolute text-gray-500" />
+                            <FaPlus className="text-gray-500 inline-block absolute -mt-[75%] md:mt-0 md:left-[5%] lg:left-[2.5%]" />
                             <img src={sword} className="rounded-full w-1/2 h-1/2 md:w-3/4 md:h-3/4 mx-auto md:justify-self-center" alt="pic of a sword" />
                         </motion.div>}
-                        {countScrollPosition >= 6 && <motion.div className="w-32 h-32 flex flex-col gap-4 items-center relative top-[-150px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-140px] border border-gray-800 text-center rounded-full p-4"
+                        {countScrollPosition >= 6 && <motion.div className="w-32 h-32 flex flex-col justify-center items-center relative top-[-150px] lg:w-48 lg:h-48 md:flex-row md:top-0 md:left-[-140px] border border-gray-800 text-center rounded-full p-4"
                             initial={scrollDirection === "down" ? {opacity: 0} : countScrollPosition === 6 ? {opacity:1}: {}}
                             animate={scrollDirection === "down" ? {opacity: 1} : countScrollPosition === 6 ? {opacity: 0}: {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <FaPlus className="inline-block md:absolute text-gray-500" />
+                            <FaPlus className="text-gray-500 inline-block absolute -mt-[75%] md:mt-0 md:left-[5%] lg:left-[2.5%]" />
                             <img src={beer} className="rounded-full w-1/2 h-1/2 md:w-3/4 md:h-3/4 mx-auto md:justify-self-center" alt="pic of a glass of beer" />
                         </motion.div>}
                     </div>

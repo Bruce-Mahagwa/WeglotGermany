@@ -30,7 +30,6 @@ const BeerTypes = () => {
         name: "Wieb",
         glass: "Wiezen"
     });
-    console.log(index)
     return (
         <div className = "text-white px-4 pt-40 md:px-8 w-full mt-12 sm:w-[80%] mx-auto">
             <div>
