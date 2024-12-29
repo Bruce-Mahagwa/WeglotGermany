@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 import Landing from './Components/Landing/Landing';
 import AboutGermans from "./Components/AboutGermans/AboutGermans"
