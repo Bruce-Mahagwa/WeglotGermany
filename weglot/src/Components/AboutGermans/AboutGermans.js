@@ -8,7 +8,7 @@ import beer from "../../assets/beer.jpg";
 import { FaPlus } from "react-icons/fa6";
 import useScrollHook from "../../hooks/useScroll";
 import DummyComponent from "../DummyComponent";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 
 const AboutGermans = () => {
     const { scrollDistance, countScrollPosition, setCountScrollPosition } = useScrollHook();
@@ -91,8 +91,8 @@ const AboutGermans = () => {
                         </motion.div>}
                     </div>
 
-                    <div className="border border-gray-800 p-8 rounded-lg mt-4 text-white">
-                        {countScrollPosition === 1 && <motion.p className="font-bold text-lg sm:text-2xl lg:text-6xl">
+                    <div className="border border-gray-800 p-2 md:p-8 rounded-lg mt-4 text-white">
+                        {countScrollPosition === 1 && <motion.p className="font-bold text-base sm:text-2xl lg:text-6xl">
                             {"Barbara".split('').map((letter, index) => (
                                 <motion.span
                                     key={index}
@@ -104,7 +104,7 @@ const AboutGermans = () => {
                                 </motion.span>
                             ))}
                         </motion.p>}
-                        {countScrollPosition === 2 && <motion.p className="font-bold text-lg sm:text-2xl lg:text-6xl relative">
+                        {countScrollPosition === 2 && <motion.p className="font-bold text-base sm:text-2xl lg:text-6xl relative">
                             Rhabarberkuchen
                             <motion.span className="absolute text-purple-400"
                                 initial={{ left: "5px", opacity: 0.5 }}
@@ -113,7 +113,7 @@ const AboutGermans = () => {
                             >barbara</motion.span>
                         </motion.p>}
 
-                        {countScrollPosition >= 3 && <motion.p className="font-bold text-lg sm:text-2xl lg:text-6xl relative">
+                        {countScrollPosition >= 3 && <motion.p className="font-bold text-base sm:text-2xl lg:text-6xl relative">
                             <motion.span className="tex-white"
                                 animate={{ color: "#c084fc" }}
                                 transition={{ delay: 0.3, duration: 0.2 }}

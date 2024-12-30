@@ -52,3 +52,8 @@ body {
 .red {
   color: #ff5252;  
 }
+/* test section */
+.fruit {
+  background: #222;
+  opacity: 1;
+}

@@ -5,6 +5,8 @@ import Landing from './Components/Landing/Landing';
 import AboutGermans from "./Components/AboutGermans/AboutGermans"
 import GermanFood from './Components/AboutGermans/GermanFood';
 import BeerTypes from './Components/AboutGermans/BeerTypes';
+import GermanLanguage from './Components/AboutGermanLanguage/GermanLanguage';
+import GermanTest from './Components/AboutGermanLanguage/GermanTest';
 function App() {
   return (
     <main>
@@ -13,6 +15,8 @@ function App() {
           <AboutGermans />
           <GermanFood />
           <BeerTypes />
+          <GermanLanguage />
+          <GermanTest />
       </div>
       {/* <div id = "links">
 
