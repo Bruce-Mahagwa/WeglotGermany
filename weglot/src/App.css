@@ -9,6 +9,7 @@
 :root {
   --green: #41d673;
   --orange: #ffab48;
+  --pink: rgb(255, 82, 82);
 }
 body {
   background: #161616 !important;  
@@ -56,4 +57,8 @@ body {
 .fruit {
   background: #222;
   opacity: 1;
+}
+.progress_bar {
+  stroke: var(--pink);
+  stroke-width: 3px;
 }

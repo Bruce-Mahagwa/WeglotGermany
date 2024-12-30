@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import {motion} from "motion/react"
 const SingleQuestion = ({ word, languageTestClicked }) => {
     const [choiceMade, setChoiceMade] = useState("");
-    function handleClick(e) {
+    function handleClick(e) { 
         const question = document.getElementById(word);
         const options = question.querySelectorAll(".option");
         options.forEach((option) => option.classList.remove("fruit"));
@@ -16,7 +16,7 @@ const SingleQuestion = ({ word, languageTestClicked }) => {
 
     useEffect(() => {
         if (choiceMade) {
-            languageTestClicked(choiceMade, word);
+            const res = languageTestClicked(choiceMade, word);
         }
     }, [choiceMade])
     return (
@@ -55,7 +55,7 @@ const SmallScreenTest = () => {
             return;
         }
     }
-    const questionLength = document.querySelector(".questions_parent")?.childNodes.length;
+    const questionLength = document.querySelector(".questions_parent")?.childNodes.length || 14;
     useEffect(() => {
         if (Object.keys(answers).length === questionLength) {
             const real_answers = ["one", "one",  "one", "two", "three", "three", "one", "three", "one", "two", "two", "one", "one", "three", "one"];
@@ -77,7 +77,7 @@ const SmallScreenTest = () => {
         }
     }, [answers, showResults])
     return (
-        <>
+        <div className = "lg:hidden">
             {!showResults && <motion.div className="text-white flex flex-col gap-4 questions_parent"
                 animate = {Object.keys(answers).length === questionLength ? {opacity: 0} : {}}
                 transition={{duration: 0.8}}
@@ -102,13 +102,13 @@ const SmallScreenTest = () => {
                     initial = {{opacity: 0, top: "10px"}}
                     animate = {{opacity: 1, top: 0}}
                     transition = {{duration: 0.5}}
-                    className = "relative mt-8"
+                    className = "relative mt-8 lg:hidden"
                 >
                     <p className="font-bold red text-xl text-center sm:text-2xl md:text-4xl lg:text-6xl mb-12">My Expert Level</p>
                     <p className="text-white text-xl text-center sm:text-2xl md:text-4xl lg:text-6xl">{score}/{questionLength}</p>
                 </motion.div>
             }
-        </>
+        </div>
     )
 }
 export default SmallScreenTest;
