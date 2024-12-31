@@ -10,6 +10,8 @@
   --green: #41d673;
   --orange: #ffab48;
   --pink: rgb(255, 82, 82);
+  --purple: #8b54ff;
+ 
 }
 body {
   background: #161616 !important;  
@@ -17,9 +19,19 @@ body {
 /* first page */
 .green {
   color: var(--green);
+  font-weight: 700;
 }
 .orange {
   color: var(--orange);
+  font-weight: 700;
+}
+.purple {
+  color: var(--purple);
+  font-weight: 700;
+}
+.red {
+  color: #ff5252;  
+  font-weight: 700;
 }
 .green_bg {
   background: var(--green);
@@ -49,10 +61,7 @@ body {
   background-position: center top 75%;
   background-repeat: no-repeat;
 }
-/*german language  */
-.red {
-  color: #ff5252;  
-}
+
 /* test section */
 .fruit {
   background: #222;
@@ -61,4 +70,17 @@ body {
 .progress_bar {
   stroke: var(--pink);
   stroke-width: 3px;
+}
+/* products */
+.dropdown_item {
+  transition-property: transform;
+  transition-duration: 500;
+  z-index: 1000;
+}
+.dropdown_item:hover {
+  background: transparent !important;
+  transform: scale(1.05);
+}
+.dropdown {
+  border: 3px solid white !important;
 }

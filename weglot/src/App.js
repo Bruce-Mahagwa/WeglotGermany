@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 import Landing from './Components/Landing/Landing';
 import AboutGermans from "./Components/AboutGermans/AboutGermans"
@@ -7,6 +6,7 @@ import GermanFood from './Components/AboutGermans/GermanFood';
 import BeerTypes from './Components/AboutGermans/BeerTypes';
 import GermanLanguage from './Components/AboutGermanLanguage/GermanLanguage';
 import GermanTest from './Components/AboutGermanLanguage/GermanTest';
+import Intro from './Components/Products/Intro';
 function App() {
   return (
     <main>
@@ -17,6 +17,7 @@ function App() {
           <BeerTypes />
           <GermanLanguage />
           <GermanTest />
+          <Intro />
       </div>
       {/* <div id = "links">
 
