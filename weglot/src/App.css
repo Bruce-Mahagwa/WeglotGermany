@@ -84,3 +84,10 @@ body {
 .dropdown {
   border: 3px solid white !important;
 }
+/* cars */
+.plane_banner {
+    padding: 20px 48px;
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,left top,right top,from(transparent),to(hsla(0,0%,100%,.2)));
+    background-image: linear-gradient(90deg,transparent,hsla(0,0%,100%,.2));
+}
