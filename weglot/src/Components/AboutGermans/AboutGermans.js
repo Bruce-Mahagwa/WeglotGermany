@@ -9,7 +9,7 @@ import { FaPlus } from "react-icons/fa6";
 import useScrollHook from "../../hooks/useScroll";
 import DummyComponent from "../DummyComponent";
 import { useState, useRef } from "react";
-
+ 
 const AboutGermans = () => {
     const { scrollDistance, countScrollPosition, setCountScrollPosition } = useScrollHook();
     const ref = useRef();

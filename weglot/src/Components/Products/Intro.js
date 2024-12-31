@@ -41,9 +41,9 @@ const Intro = () => {
                 </p>
             </motion.div>
 
-            <div className = "mt-32 flex flex-col gap-32 md:flex-row gap-4">
+            <div className = "mt-32 flex flex-col gap-32 md:flex-row md:gap-4">
                 <div className="border-2 border-gray-700 rounded-xl p-4">
-                    <img src={exportgraph} alt="graph of exports" className = "block relative -top-32 md:-top-24" />
+                    <img src={exportgraph} alt="graph of exports" className = "block relative -top-28 md:-top-20" />
                     <motion.div className="mt-4 text-left relative"
                         initial={{ opacity: 0, top: "25px" }}
                         whileInView={{ opacity: 1, top: "-20px" }}
@@ -54,7 +54,7 @@ const Intro = () => {
                     </motion.div>
                 </div>
                 <div className="border-2 border-gray-700 rounded-xl p-4">
-                    <img src={countryranking} alt="graph of country rankings" className = "block relative -top-32 md:-top-24" />
+                    <img src={countryranking} alt="graph of country rankings" className = "block relative -top-28 md:-top-20" />
                     <motion.div className="mt-4 text-left relative"
                         initial={{ opacity: 0, top: "25px" }}
                         whileInView={{ opacity: 1, top: "-20px" }}

@@ -7,6 +7,7 @@ import BeerTypes from './Components/AboutGermans/BeerTypes';
 import GermanLanguage from './Components/AboutGermanLanguage/GermanLanguage';
 import GermanTest from './Components/AboutGermanLanguage/GermanTest';
 import Intro from './Components/Products/Intro';
+import Vehicles from './Components/Products/Vehicles';
 function App() {
   return (
     <main>
@@ -18,6 +19,7 @@ function App() {
           <GermanLanguage />
           <GermanTest />
           <Intro />
+          <Vehicles />
       </div>
       {/* <div id = "links">
 
