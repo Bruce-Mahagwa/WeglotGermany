@@ -1,10 +1,10 @@
 import plane from "../../assets/plane.png";
 import { motion } from "motion/react";
 const Plane = ({scrollPercentage, planeRightPosition}) => {
-    return (
-        <motion.div className="flex items-center justify-end border-2 border-red w-full bg-[#161616] z-50 absolute top-32 right-[100%]"
-            initial={scrollPercentage <= 0.35 ? { right: "100%" } : {}}
-            animate={scrollPercentage > 0.35 ? { right: `${planeRightPosition}%` } : {}}
+    return ( 
+        <motion.div className="flex items-center justify-end w-full z-50 absolute top-24 right-[100%] z-50 bg-[#161616]"
+            initial={scrollPercentage <= 0.50 ? { right: "100%" } : {}}
+            animate={scrollPercentage > 0.50 ? { right: `${planeRightPosition}%` } : {}}
             transition={{ duration: 0.4, ease: "easeOut" }}
         >
             {/* plane */}

@@ -27,16 +27,16 @@ const Vehicles = () => {
     const [shipLeftPosition, setShipLeftPosition] = useState(100);
     useEffect(() => {
         setScrollPercentage(scrollYProgress.current.toFixed(2))
-        if (scrollPercentage >= 0.10) {            
-            const topValue = scrollPercentage * 100 - 10; // get values ranging from 1 to 10
-            const scrollValue = topValue * 5 // get values ranging from 5 to 50
-            if (scrollPercentage < 0.40) {
+        if (scrollPercentage >= 0.20) {            
+            const topValue = scrollPercentage * 100 - 20; // get values ranging from 1 to 20          
+            const scrollValue = topValue * 5/2 // get values ranging from 2.5 to 50
+            if (scrollPercentage <= 0.50) {
                 setLightningBoltScale(1);
             }
-            else {
+            else { 
                 setLightningBoltScale(() => {
-                    const scrollValue = scrollPercentage  * 100 - 40 // get values ranging from 1 to 10
-                    let new_scale = (100 - scrollValue * 50) / 100; // get a value between 0 and 1;
+                    const scrollValue = scrollPercentage  * 100 - 50 // get values ranging from 1 to 10
+                    let new_scale = (100 - scrollValue * 10) / 100; // get a value between 0 and 1;
                     if (new_scale < 0) {
                         new_scale = 0;
                     }
@@ -53,17 +53,17 @@ const Vehicles = () => {
                 return scrollValue;
             })
         }
-        else if (scrollPercentage < 0.10) {
+        else if (scrollPercentage < 0.20) {
             setLightningBoltScale(0);
         }
 
-        if (scrollPercentage > 0.30) {            
+        if (scrollPercentage > 0.40) {            
             const carElement = document.querySelector(".car");
             carElement.classList.add("animate-pulse")
             carElement.classList.add("z-50")
 
-            const topValue = scrollPercentage * 100 - 30; // get values ranging from 1 to 10
-            const scrollValue = 42.5 - topValue * 4.25 // get values ranging from 5 to 50
+            const topValue = scrollPercentage * 100 - 40; // get values ranging from 1 to 20
+            const scrollValue = 42.5 - topValue * (4.25 / 2) // get values ranging from 5 to 4.25/2 to 42.5
             setCarTopPosition(() => {
                 if (scrollValue <= 0) {
                     return 0;
@@ -71,9 +71,9 @@ const Vehicles = () => {
                 return scrollValue
             });
             setPlaneRightPosition(() => {
-                let rightValue = scrollPercentage * 100 - 30 - 5; //get values ranging from 1 to 10                
-                const scrollRightValue = 100 - rightValue * 10;
-                if (scrollPercentage > 0.35) {
+                let rightValue = scrollPercentage * 100 - 50; //get values ranging from 1 to 50                
+                const scrollRightValue = 100 - rightValue * 2;
+                if (scrollPercentage > 0.50) {
                     setPlaneRightPosition(() => {
                         if (scrollRightValue <= 0) {
                             return 0;
@@ -83,9 +83,9 @@ const Vehicles = () => {
                 }
             })
             setShipLeftPosition(() => {
-                const leftValue = scrollPercentage * 100 - 30 - 5; //get values ranging from 1 to 10
-                const scrollLeftValue = 100 - leftValue * 10;
-                if (scrollPercentage > 0.35) {
+                const leftValue = scrollPercentage * 100 - 50; //get values ranging from 1 to 50
+                const scrollLeftValue = 100 - leftValue * 2;
+                if (scrollPercentage > 0.50) {
                     setShipLeftPosition(() => {
                         if (scrollLeftValue <= 0) {
                             return 0;
@@ -94,16 +94,13 @@ const Vehicles = () => {
                     })
                 }
             })
-
         }
-
-
     }, [scrollDistance])
     return (
         <div className="relative text-white px-4 pt-40 md:px-8 w-full mt-12 sm:w-[80%] mx-auto h-[500vh]"
             ref={ref}
         >
-            <div className="sticky min-h-screen top-0 pt-12 overflow-hidden">
+            <div className="sticky min-h-screen top-20 overflow-hidden">
                 <motion.div
                     initial={{ opacity: 0, top: "15px" }}
                     whileInView={{ opacity: 1, top: "0px" }}
@@ -111,13 +108,13 @@ const Vehicles = () => {
                     className="relative min-h-12 md:min-h-24 lg:min-h-40"
                 >
                     <motion.p className="text-xl sm:text-2xl md:text-4xl lg:text-6xl absolute"
-                        animate = {scrollPercentage > 0.30 ? {opacity: 0, display: "none"} : {}}
+                        animate = {scrollPercentage > 0.50 ? {opacity: 0, display: "none"} : {}}
                         transition={{duration: 0.5}}
                     >
                         No wonder. We know all about good design and like to <span className="orange">share it</span> with the world.
                     </motion.p>
-                    {scrollPercentage <= 0.35 && <motion.p className="text-xl sm:text-2xl md:text-4xl lg:text-6xl hidden absolute"
-                        animate = {scrollPercentage >= 0.32 ? {opacity: 1, display: "block"} : {}}
+                    {scrollPercentage <= 0.75 && <motion.p className="text-xl sm:text-2xl md:text-4xl lg:text-6xl hidden absolute"
+                        animate = {scrollPercentage >= 0.52 ? {opacity: 1, display: "block"} : {}}
                         transition={{duration: 0.5}}
                     >
                         We believe in <span className="orange">innovation</span>, driven by technology.
@@ -155,3 +152,77 @@ const Vehicles = () => {
     )
 }
 export default Vehicles;
+
+
+
+// useEffect(() => {
+//     setScrollPercentage(scrollYProgress.current.toFixed(2))
+//     if (scrollPercentage >= 0.10) {            
+//         const topValue = scrollPercentage * 100 - 10; // get values ranging from 1 to 10
+//         const scrollValue = topValue * 5 // get values ranging from 5 to 50
+//         if (scrollPercentage < 0.40) {
+//             setLightningBoltScale(1);
+//         }
+//         else {
+//             setLightningBoltScale(() => {
+//                 const scrollValue = scrollPercentage  * 100 - 40 // get values ranging from 1 to 10
+//                 let new_scale = (100 - scrollValue * 50) / 100; // get a value between 0 and 1;
+//                 if (new_scale < 0) {
+//                     new_scale = 0;
+//                 }
+//                 return new_scale;
+//             })
+//         }
+//         setLightningBoltTopPosition(() => {
+//             if (scrollValue > 50) {
+//                 return 50;
+//             }
+//             else if (scrollValue < 5) {
+//                 return 5;
+//             }
+//             return scrollValue;
+//         })
+//     }
+//     else if (scrollPercentage < 0.10) {
+//         setLightningBoltScale(0);
+//     }
+
+//     if (scrollPercentage > 0.30) {            
+//         const carElement = document.querySelector(".car");
+//         carElement.classList.add("animate-pulse")
+//         carElement.classList.add("z-50")
+
+//         const topValue = scrollPercentage * 100 - 30; // get values ranging from 1 to 10
+//         const scrollValue = 42.5 - topValue * 4.25 // get values ranging from 5 to 50
+//         setCarTopPosition(() => {
+//             if (scrollValue <= 0) {
+//                 return 0;
+//             }
+//             return scrollValue
+//         });
+//         setPlaneRightPosition(() => {
+//             let rightValue = scrollPercentage * 100 - 30 - 5; //get values ranging from 1 to 10                
+//             const scrollRightValue = 100 - rightValue * 10;
+//             if (scrollPercentage > 0.35) {
+//                 setPlaneRightPosition(() => {
+//                     if (scrollRightValue <= 0) {
+//                         return 0;
+//                     }
+//                     return scrollRightValue;
+//                 })
+//             }
+//         })
+//         setShipLeftPosition(() => {
+//             const leftValue = scrollPercentage * 100 - 30 - 5; //get values ranging from 1 to 10
+//             const scrollLeftValue = 100 - leftValue * 10;
+//             if (scrollPercentage > 0.35) {
+//                 setShipLeftPosition(() => {
+//                     if (scrollLeftValue <= 0) {
+//                         return 0;
+//                     }
+//                     return scrollLeftValue;
+//                 })
+//             }
+//         })
+//     }
+// }, [scrollDistance])

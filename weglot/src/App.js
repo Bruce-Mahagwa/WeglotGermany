@@ -8,6 +8,8 @@ import GermanLanguage from './Components/AboutGermanLanguage/GermanLanguage';
 import GermanTest from './Components/AboutGermanLanguage/GermanTest';
 import Intro from './Components/Products/Intro';
 import Vehicles from './Components/Products/Vehicles';
+import Global from './Components/Multilingual/Global';
+import Features from './Components/Multilingual/Features';
 function App() {
   return (
     <main>
@@ -20,6 +22,9 @@ function App() {
           <GermanTest />
           <Intro />
           <Vehicles />
+          <Global />
+          <Features />
+          <div className = "h-screen"></div>
       </div>
       {/* <div id = "links">
 
