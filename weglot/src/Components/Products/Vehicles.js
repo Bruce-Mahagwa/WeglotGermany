@@ -1,12 +1,11 @@
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import useScrollHook from "../../hooks/useScroll";
-import car from "../../assets/car.png";
-import bolt from "../../assets/lightningboltsmall.png";
-import plane from "../../assets/plane.png";
-import ship from "../../assets/ship.png";
-import { GiWindTurbine } from "react-icons/gi";
-import { GiPaperWindmill } from "react-icons/gi";
+import Car from "./Car";
+import LightningBolt from "./LightningBolt";
+import WindTurbine from "./WindTurbine";
+import Plane from "./Plane";
+import Ship from "./Ship";
 
 const Vehicles = () => {
     const ref = useRef();
@@ -145,66 +144,11 @@ const Vehicles = () => {
                 </div>
 
                 {/* images */}
-                <motion.div className="absolute top-[42.5%] right-[23px] car"
-                    animate = {scrollPercentage > 0.30 ? {top: `${carTopPosition}%`} : {}}
-                >
-                    {/* car */}
-                    <img src={car} alt="image of a car" className="w-20 md:w-24 lg:w-28" />
-                </motion.div>
-
-                <motion.div className="absolute right-0 md:-right-[10px] lg:-right-[25px] top-[5%] rounded-full"
-                    initial={{ scale: lightningBoltScale }}
-                    animate={{ scale: lightningBoltScale, top: `${lightningBoltTopPosition}%`}}                    
-                    transition={{ duration: 0.5 }}
-                >
-                    {/* lightning bolt */}
-                    <img src={bolt} alt="image of a lightning bolt" className="w-32 md:w-40 lg:w-52" />
-                </motion.div>
-
-                <motion.div className="flex absolute top-[50%] right-[25%]">
-                    {/* wind turbine */}
-                    {scrollPercentage < 0.40 && <><motion.div
-                        initial={scrollPercentage <= 0.27 ? { opacity: 0 } : { opacity: 1 }}
-                        animate={scrollPercentage <= 0.27 ? { opacity: 0 } : { opacity: 1 }}
-                    >
-                        <GiWindTurbine size={100} className="animate-bounce text-gray-700 brightness-150 contrast-200" />
-                    </motion.div>
-                    <motion.div
-                        initial={scrollPercentage <= 0.24 ? { opacity: 0 } : { opacity: 1 }}
-                        animate={scrollPercentage <= 0.24 ? { opacity: 0 } : { opacity: 1 }}
-                    >
-                        <GiWindTurbine size={100} className="animate-pulse text-gray-700 brightness-150 contrast-200" />
-                    </motion.div>
-                    <motion.div
-                        initial={scrollPercentage <= 0.20 ? { opacity: 0 } : { opacity: 1 }}
-                        animate={scrollPercentage <= 0.20 ? { opacity: 0 } : { opacity: 1 }}
-                    >
-                        <GiPaperWindmill size={100} className="animate-spin text-gray-700 brightness-150 contrast-200" />
-                    </motion.div>
-                    </>}
-                </motion.div>
-
-                <motion.div className = "flex items-center justify-end border-2 border-red w-full bg-[#161616] z-50 absolute top-32 right-[100%]"
-                    initial = {scrollPercentage <= 0.35 ? {right: "100%"} : {}}
-                    animate = {scrollPercentage > 0.35 ? {right: `${planeRightPosition}%`} : {}}
-                    transition={{duration: 0.4, ease: "easeOut"}}
-                >
-                    {/* plane */}
-                    <div className = "text-white text-sm md:text-base plane_banner w-56 md:w-60 lg:w-72">
-                        <h2 className = "orange">~2.9m</h2>
-                        <p>People are employed in the logistics sector</p>
-                    </div>
-                    <img src = {plane} alt = "plane image" className = "w-40 md:w-60" />                    
-                </motion.div>
-
-                <motion.div className = "flex border-2 border-red w-full bg-[#161616] z-50 absolute top-80 md:top-96 min-h-40 left-[100%]"
-                    initial = {scrollPercentage <= 0.35 ? {left: "100%"} : {}}
-                    animate = {scrollPercentage > 0.35 ? {left: `${shipLeftPosition}%`} : {}}
-                    transition={{duration: 0.4, ease: "easeOut"}}
-                >
-                    {/* ship */}
-                    <img src = {ship} alt = "ship image" className = "w-40 md:w-60" />                    
-                </motion.div>
+                <Car carTopPosition = {carTopPosition} scrollPercentage = {scrollPercentage} />                
+                <LightningBolt lightningBoltTopPosition = {lightningBoltTopPosition} lightningBoltScale = {lightningBoltScale} />                
+                <WindTurbine scrollPercentage = {scrollPercentage} />
+                <Plane scrollPercentage = {scrollPercentage} planeRightPosition = {planeRightPosition}/>
+                <Ship scrollPercentage = {scrollPercentage} shipLeftPosition = {shipLeftPosition} />                
             </div>
 
         </div>

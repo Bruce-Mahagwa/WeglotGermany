@@ -4,7 +4,7 @@ import { Dropdown } from "flowbite-react";
 import exportgraph from "../../assets/exportgraph.png"
 import countryranking from "../../assets/countryranking.png"
 const Intro = () => {
-    return (
+    return ( 
         <div className="text-white text-center px-4 pt-40 md:px-8 w-full mt-12 sm:w-[80%] mx-auto">
             <motion.div
                 initial={{ opacity: 0, top: "15px" }}

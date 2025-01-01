@@ -11,7 +11,7 @@ const Landing = () => {
         <div className = "w-full text-white mb-40 px-4 md:px-8 pt-12 first_page overflow-hidden">
             <h1 className = "mb-20"><span className = "font-bold">WEGLOT</span> for Germany</h1>
             <div className = "intro flex flex-col gap-8 md:gap-16 justify-center">
-                <div className = "relative w-max">
+                <div className = "relative w-60 sm:w-max">
                     <img src = {eye} alt = "image of an eye" 
                     />
                     <div className = "absolute w-24 h-24 green_bg rounded-full center_absolute"
