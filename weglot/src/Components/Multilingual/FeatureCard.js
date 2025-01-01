@@ -1,5 +1,5 @@
 import { motion} from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import {  useRef } from "react";
 const FeatureCard = ({title, description, img, zindex, top, scrollPercentage}) => {
     const ref = useRef();
 

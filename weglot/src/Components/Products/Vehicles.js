@@ -1,4 +1,4 @@
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { motion, useScroll } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import useScrollHook from "../../hooks/useScroll";
 import Car from "./Car";
@@ -9,15 +9,11 @@ import Ship from "./Ship";
 
 const Vehicles = () => {
     const ref = useRef();
-    const [scrollDirection, setScrollDirection] = useState("down")
     const { scrollDistance } = useScrollHook();
-    const { scrollYProgress, scrollY } = useScroll({
+    const { scrollYProgress } = useScroll({
         target: ref
     });
-    useMotionValueEvent(scrollY, "change", (current) => {
-        const diff = current - scrollY.getPrevious()
-        setScrollDirection(diff > 0 ? "down" : "up")
-    });
+   
     // ui state to determine when images show
     const [scrollPercentage, setScrollPercentage] = useState(0);
     const [lightningBoltTopPosition, setLightningBoltTopPosition] = useState(0);
@@ -95,7 +91,7 @@ const Vehicles = () => {
                 }
             })
         }
-    }, [scrollDistance])
+    }, [scrollDistance, scrollPercentage, scrollYProgress])
     return (
         <div className="relative text-white px-4 pt-40 md:px-8 w-full mt-12 sm:w-[80%] mx-auto h-[500vh]"
             ref={ref}
@@ -155,74 +151,3 @@ export default Vehicles;
 
 
 
-// useEffect(() => {
-//     setScrollPercentage(scrollYProgress.current.toFixed(2))
-//     if (scrollPercentage >= 0.10) {            
-//         const topValue = scrollPercentage * 100 - 10; // get values ranging from 1 to 10
-//         const scrollValue = topValue * 5 // get values ranging from 5 to 50
-//         if (scrollPercentage < 0.40) {
-//             setLightningBoltScale(1);
-//         }
-//         else {
-//             setLightningBoltScale(() => {
-//                 const scrollValue = scrollPercentage  * 100 - 40 // get values ranging from 1 to 10
-//                 let new_scale = (100 - scrollValue * 50) / 100; // get a value between 0 and 1;
-//                 if (new_scale < 0) {
-//                     new_scale = 0;
-//                 }
-//                 return new_scale;
-//             })
-//         }
-//         setLightningBoltTopPosition(() => {
-//             if (scrollValue > 50) {
-//                 return 50;
-//             }
-//             else if (scrollValue < 5) {
-//                 return 5;
-//             }
-//             return scrollValue;
-//         })
-//     }
-//     else if (scrollPercentage < 0.10) {
-//         setLightningBoltScale(0);
-//     }
-
-//     if (scrollPercentage > 0.30) {            
-//         const carElement = document.querySelector(".car");
-//         carElement.classList.add("animate-pulse")
-//         carElement.classList.add("z-50")
-
-//         const topValue = scrollPercentage * 100 - 30; // get values ranging from 1 to 10
-//         const scrollValue = 42.5 - topValue * 4.25 // get values ranging from 5 to 50
-//         setCarTopPosition(() => {
-//             if (scrollValue <= 0) {
-//                 return 0;
-//             }
-//             return scrollValue
-//         });
-//         setPlaneRightPosition(() => {
-//             let rightValue = scrollPercentage * 100 - 30 - 5; //get values ranging from 1 to 10                
-//             const scrollRightValue = 100 - rightValue * 10;
-//             if (scrollPercentage > 0.35) {
-//                 setPlaneRightPosition(() => {
-//                     if (scrollRightValue <= 0) {
-//                         return 0;
-//                     }
-//                     return scrollRightValue;
-//                 })
-//             }
-//         })
-//         setShipLeftPosition(() => {
-//             const leftValue = scrollPercentage * 100 - 30 - 5; //get values ranging from 1 to 10
-//             const scrollLeftValue = 100 - leftValue * 10;
-//             if (scrollPercentage > 0.35) {
-//                 setShipLeftPosition(() => {
-//                     if (scrollLeftValue <= 0) {
-//                         return 0;
-//                     }
-//                     return scrollLeftValue;
-//                 })
-//             }
-//         })
-//     }
-// }, [scrollDistance])

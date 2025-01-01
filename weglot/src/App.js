@@ -10,10 +10,11 @@ import Intro from './Components/Products/Intro';
 import Vehicles from './Components/Products/Vehicles';
 import Global from './Components/Multilingual/Global';
 import Features from './Components/Multilingual/Features';
+import Footer from './Components/Footer/Footer';
 function App() {
   return (
     <main>
-      <div id = "content" className = "flex flex-col items-center mx-auto xl:border-4 xl:border-red">
+      <div id = "content" className = "flex flex-col items-center mx-auto">
           <Landing />
           <AboutGermans />
           <GermanFood />
@@ -24,7 +25,7 @@ function App() {
           <Vehicles />
           <Global />
           <Features />
-          <div className = "h-screen"></div>
+          <Footer />
       </div>
       {/* <div id = "links">
 

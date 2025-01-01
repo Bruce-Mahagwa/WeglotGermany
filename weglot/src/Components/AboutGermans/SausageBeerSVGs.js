@@ -1,4 +1,4 @@
-import {easeOut, motion} from "motion/react";
+import { motion} from "motion/react";
 const SausageBeerSVGs = () => {
     return (
         <div className="flex gap-4 w-full mt-12 sm:w-[80%] md:gap-8 mx-auto">
